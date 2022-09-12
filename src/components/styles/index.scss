@@ -1,0 +1,201 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap');
+
+@import 'mixins';
+
+body {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+.page {
+  box-sizing: border-box;
+}
+
+.wrapper {
+  max-width: 1100px;
+  margin: 0 auto;
+
+  padding: 0 10px;
+}
+
+.header {
+  margin-bottom: 24px;
+
+  @include onBigPhone {
+    margin-bottom: 32px;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding-top: 50px;
+  }
+}
+
+.logo {
+  display: inherit;
+  flex-direction: inherit;
+  align-items: inherit;
+
+  margin-bottom: 24px;
+
+  &__img {
+    width: 100px;
+
+    border-radius: 10px;
+
+    margin-bottom: 15px;
+
+    @include onBigPhone {
+      width: 150px;
+    }
+  }
+
+  &__name {
+    margin: 0;
+    margin-bottom: 8px;
+
+    font-size: 14px;
+
+    color: #4e5150;
+
+    @include onBigPhone {
+      font-size: 24px;
+    }
+  }
+
+  &__city {
+    margin: 0;
+
+    font-size: 10px;
+    line-height: 17px;
+
+    color: #a9a9a9;
+
+    @include onBigPhone {
+      font-size: 14px;
+    }
+  }
+}
+
+.info-block {
+  display: flex;
+  max-width: 250px;
+  width: 100%;
+  justify-content: space-between;
+
+  @include onBigPhone {
+    max-width: 350px;
+  }
+
+  &__block {
+    max-width: 80px;
+    width: 100%;
+    height: 50px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    background-color: #e5e5e5;
+    border-radius: 12px;
+
+    @include onBigPhone {
+      max-width: 100px;
+      height: 65px;
+    }
+
+    &__number {
+      margin-bottom: 2px;
+
+      font-size: 12px;
+      text-align: center;
+
+      color: #4e5150;
+
+      @include onBigPhone {
+        font-size: 18px;
+      }
+    }
+
+    &__name {
+      font-size: 12px;
+
+      color: #bdbdbd;
+
+      @include onBigPhone {
+        font-size: 14px;
+      }
+    }
+  }
+}
+
+.photo {
+  width: 100%;
+  height: 150px;
+
+  object-fit: cover;
+  object-position: center;
+
+  border-radius: 10px;
+
+  @include onBigPhone {
+    height: 300px;
+  }
+}
+
+.content {
+  &__block {
+    display: grid;
+
+    grid-template-areas:
+      'img1 img2 img2'
+      'img3 img3 img4'
+      'img5 img6 img4';
+
+    grid-template-rows: repeat(3, 150px);
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 10px;
+    row-gap: 10px;
+
+    @include onBigPhone {
+      column-gap: 30px;
+      row-gap: 30px;
+      grid-template-rows: repeat(3, 300px);
+    }
+  }
+
+  &__img1 {
+    grid-area: img1;
+  }
+
+  &__img2 {
+    grid-area: img2;
+  }
+
+  &__img3 {
+    grid-area: img3;
+  }
+
+  &__img4 {
+    height: 100%;
+    grid-area: img4;
+  }
+
+  &__img5 {
+    grid-area: img5;
+  }
+
+  &__img6 {
+    grid-area: img6;
+  }
+}
